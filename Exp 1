@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title of the web page, displayed in the browser's title bar or tab -->
+    <title>My Web Page</title>
+    <!-- Character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- Description of the web page for search engines -->
+    <meta name="description" content="This is a sample web page with various head elements.">
+    <!-- Keywords for search engine optimization -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, web development">
+    <!-- Author of the web page -->
+    <meta name="author" content="Your Name"> 
+    <!-- Link to an external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to a favicon, which is the small icon displayed in the browser tab -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Link to an external JavaScript file -->
+    <script src="script.js" defer></script>
+    <!-- Open Graph metadata for social media -->
+    <meta property="og:title" content="My Web Page">
+    <meta property="og:description" content="A sample web page with various head elements.">
+    <meta property="og:image" content="image.jpg">
+    <meta property="og:url" content="http://example.com">
+    <!-- Additional meta tags -->
+    <meta name="robots" content="index, follow">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Web Page</h1>
+    </header>
+    <main>
+        <p>This is the content of the web page.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
+</html>
