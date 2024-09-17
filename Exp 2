@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearest Odd Numbers</title>
+</head>
+<body>
+    <h1>Find Nearest Odd Numbers</h1>
+    <button onclick="findNearestOddNumbers()">Get Nearest Odd Numbers</button>
+    <script>
+        function findNearestOddNumbers() {
+            let input = prompt("Enter numbers separated by commas (e.g., 1, 2, 3, 4):");
+            if (input) {
+                let numbers = input.split(',').map(num => parseFloat(num.trim()));
+                function nearestOdd(num) {
+                    if (isNaN(num)) return null;
+                    let lower = Math.floor(num);
+                    let upper = Math.ceil(num);
+                    if (lower % 2 === 0) {
+                        lower -= 1;
+                    }
+                    if (upper % 2 === 0) {
+                        upper += 1;
+                    }
+                    return (Math.abs(num - lower) < Math.abs(num - upper)) ? lower : upper;
+                }
+                let oddNumbers = numbers.map(num => nearestOdd(num));
+                alert("Nearest odd numbers: " + oddNumbers.join(', '));
+            } else {
+                alert("No input provided.");
+            }
+        }
+    </script>
+</body>
+</html>
