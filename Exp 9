@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .message { color: red; }
+        .valid { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Email Validation</h1>
+    <input type="text" id="email" placeholder="example@domain.com">
+    <button onclick="validateEmail()">Validate</button>
+    <div id="message" class="message"></div>
+
+    <script>
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message');
+            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            message.textContent = isValid ? 'Valid email format!' : 'Invalid email format.';
+            message.className = isValid ? 'message valid' : 'message';
+        }
+    </script>
+</body>
+</html>
