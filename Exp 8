@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Operations</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        input, button { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Number Operations</h1>
+
+    <input type="number" id="base" placeholder="Base">
+    <input type="number" id="exponent" placeholder="Exponent">
+    <button onclick="showResult('exponentialResult', Math.pow(+base.value, +exponent.value))">Calculate Exponential</button>
+    <div id="exponentialResult"></div>
+
+    <input type="number" id="decimalNumber" placeholder="Number">
+    <input type="number" id="decimalPlaces" placeholder="Decimal Places">
+    <button onclick="showResult('decimalResult', +decimalNumber.value.toFixed(decimalPlaces.value))">Limit Decimal</button>
+    <div id="decimalResult"></div>
+
+    <input type="number" id="numberToString" placeholder="Number">
+    <button onclick="showResult('stringResult', numberToString.value)">Convert to String</button>
+    <div id="stringResult"></div>
+
+    <button onclick="showResult('infinityResult', Number.NEGATIVE_INFINITY)">Get Negative Infinity</button>
+    <div id="infinityResult"></div>
+
+    <script>
+        function showResult(elementId, result) {
+            document.getElementById(elementId).innerText = result;
+        }
+    </script>
+</body>
+</html>
