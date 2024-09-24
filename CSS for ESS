@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Positioning Example</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container to hold the elements */
+        .container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            background-color: #ddd;
+            border: 1px solid #333;
+        }
+
+        /* Common styles for both elements */
+        .element {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+        }
+
+        /* Bottom element styling */
+        .element1 {
+            background-color: #007BFF; /* Blue */
+        }
+
+        /* Top element styling */
+        .element2 {
+            background-color: #FF5733; /* Orange */
+            top: 30px; /* Adjust this to control the overlap */
+            left: 30px; /* Adjust this to control the horizontal overlap */
+            z-index: 1; /* Ensures this element stays on top */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Parent container to hold the elements -->
+    <div class="container">
+        <!-- First element -->
+        <div class="element element1">
+            <h2>Element 1</h2>
+            <p>This is the bottom element.</p>
+        </div>
+        
+        <!-- Second element, will be positioned over the first element -->
+        <div class="element element2">
+            <h2>Element 2</h2>
+            <p>This is the top element, overlapping the first.</p>
+        </div>
+    </div>
+
+</body>
+</html>
