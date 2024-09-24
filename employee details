@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; text-align: center; }
+        form, table { margin: 20px auto; padding: 20px; background-color: #fff; width: 400px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input[type="text"], input[type="email"], input[type="date"], input[type="number"], input[type="submit"] { width: 100%; padding: 10px; margin: 10px 0; }
+        th, td { padding: 10px; text-align: left; }
+    </style>
+</head>
+<body>
+
+<%-- Display Form if no data submitted --%>
+<% if (request.getParameter("name") == null) { %>
+    <form action="register.jsp" method="post">
+        <h2>Employee Registration</h2>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="date" name="dob" required>
+        <input type="text" name="position" placeholder="Position" required>
+        <input type="number" name="salary" placeholder="Salary" required>
+        <input type="submit" value="Register">
+    </form>
+<% } else { %>
+    <h2>Registration Successful</h2>
+    <table border="1">
+        <tr><th>Field</th><th>Information</th></tr>
+        <tr><td>Name</td><td><%= request.getParameter("name") %></td></tr>
+        <tr><td>Email</td><td><%= request.getParameter("email") %></td></tr>
+        <tr><td>Date of Birth</td><td><%= request.getParameter("dob") %></td></tr>
+        <tr><td>Position</td><td><%= request.getParameter("position") %></td></tr>
+        <tr><td>Salary</td><td><%= request.getParameter("salary") %></td></tr>
+    </table>
+<% } %>
+
+</body>
+</html>
